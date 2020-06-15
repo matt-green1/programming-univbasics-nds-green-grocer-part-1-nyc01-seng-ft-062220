@@ -23,13 +23,9 @@ def find_item_by_name_in_collection(name, collection)
 end
 
 def consolidate_cart(cart)
-  #binding.pry
   new_cart = []
-  #binding.pry
   cart.each{|item_element|
-    #binding.pry
     if !find_item_by_name_in_collection(item_element[:item], new_cart)
-      #binding.pry
       item_element[:count] = 1
       new_cart.push(item_element)
     elsif find_item_by_name_in_collection(item_element[:item], new_cart)
